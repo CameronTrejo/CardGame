@@ -4,6 +4,6 @@ class Card:
         self.name = name
         self.cost = cost
 
-    def printCard(self)
+    def printCard(self):
         print('Name:', self.name)
         print('Cost:', self.cost)
