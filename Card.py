@@ -1,3 +1,4 @@
+# Parent class
 class Card:
 
     def __init__(self, name, cost):
