@@ -8,6 +8,6 @@ class Minion(Card):
         self.healthPoints = healthPoints
 
     def printCard(self):
-        # self.printCard()
+        Card.printCard(self)
         print('Attack Points:', self.attackPoints)
         print('Health Points:', self.healthPoints)
