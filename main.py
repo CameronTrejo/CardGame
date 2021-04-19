@@ -21,7 +21,7 @@ def main():
         if lengthOfList == 4:
             attackPoints = cardInfo[2]
             healthPoints = cardInfo[3]
-            cardData = Minion(nameOfCard, costOfCard, healthPoints, attackPoints)
+            cardData = Minion(nameOfCard,costOfCard,healthPoints,attackPoints)
         deck.append(cardData)
 
     cards.close()
