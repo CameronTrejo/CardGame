@@ -6,18 +6,26 @@ def main():
     
     deck = []
     
-    acornBearer = Minion('Acorn Bearer', 1, 2, 1)
-    deck.append(acornBearer)
+    cards = open('Cards.txt', 'r')
 
-    sigilOfSilence = Card('Sigil of Silence', 0)
-    deck.append(sigilOfSilence)
+    for card in cards:
+        cardInfo = card.split(',')
+        nameOfCard = cardInfo[0]
+        costOfCard = cardInfo[1]
+        lengthOfList = len(cardInfo)
+        
+        #  if card length is 2 create an instance of the Card object
+        if lengthOfList == 2:
+            cardData = Card(nameOfCard, costOfCard)
+        #  Id card length is 4 create an instance of the minion object
+        if lengthOfList == 4:
+            attackPoints = cardInfo[2]
+            healthPoints = cardInfo[3]
+            cardData = Minion(nameOfCard, costOfCard, healthPoints, attackPoints)
+        deck.append(cardData)
 
-    imprisonedFelmaw = Minion('Imprisoned Felmaw', 2, 5, 4)
-    deck.append(imprisonedFelmaw)
+    cards.close()
 
-    nagrandSlam = Card('Nagrand Slam', 10)
-    deck.append(nagrandSlam)
-    
     for card in deck:
         card.printCard()
         print('\n')
